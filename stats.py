@@ -1,22 +1,14 @@
-def get_book_text(fpath):
-    with open(fpath) as f:
-        return f.read()
-    
-def word_count(fpath):
-    with open(fpath) as f:
-        text = f.read()
+def get_num_words(text):
     words = text.split()
-    return str(len(words))
+    return len(words)
 
-def char_count(fpath):
-    with open(fpath) as f:
-        text = f.read()
-        make_lower = text.lower()
-        chars = list(make_lower)
-        counter = {}
-        for each in chars:
-            if each in counter:
-                counter[each] += 1
-            else:
-                counter[each] = 1
-    return counter
+
+def get_chars_dict(text):
+    chars = {}
+    for c in text:
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1
+        else:
+            chars[lowered] = 1
+    return chars
