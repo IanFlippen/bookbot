@@ -1,7 +1,7 @@
-from stats import word_count
+from stats import char_count, word_count
 
 def main():
-    read_Book = word_count('./books/frankenstein.txt')
-    print(read_Book + " words found in the document")
+    split_to_char = char_count('./books/frankenstein.txt')
+    print(split_to_char)
 
 main()
