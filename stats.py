@@ -12,3 +12,11 @@ def get_chars_dict(text):
         else:
             chars[lowered] = 1
     return chars
+
+def sorter(items):
+    return items["num"]
+
+def report(raw_char):
+    report_char = [{"char": each, "num": raw_char[each]} for each in raw_char]
+    report_char.sort(reverse=True, key=sorter)
+    return report_char
